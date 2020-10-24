@@ -6,16 +6,16 @@
 //  Copyright © 2016 Elias Farhan. All rights reserved.
 //
 
-#ifndef Characters_hpp
-#define Characters_hpp
+#pragma on
+//  #ifndef Characters_hpp
+//#define Characters_hpp
 
-#include <iostraem>
+#include <iostream>
 
 class Character;
 
 class Monster : public Character
-{
-    
+{  
 public:
     Monster(int,int,int,int);
     void takeDamage(int damage);
@@ -23,31 +23,33 @@ public:
     void death();
 };
 
-class Hero : Character
+class Hero : public Character
 {
 public:
-    Hero(int,int,int,int);
+    Hero(int, int, int, int);
     void takeDamage(int damage);
     void fight(Monster*);
     void death();
-};)
+};
 
-class Character
+class Character 
 {
 public:
     Character(int,int,int,int);
     void takeDamage(int damage);
     bool isAlive() = 0;
     virtual void death() = 0;
-    
     int getHealth();
     int getDefense();
+    int getAttack();
+
 protected:
-    int haelth;
+    int health;
     int attack;
     int defense;
+    int strength;
 };
 
 
 
-#endif /* Characters_hpp */
+//#endif /* Characters_hpp */
