@@ -6,7 +6,7 @@
 //  Copyright © 2016 Elias Farhan. All rights reserved.
 //
 
-#pragma on
+#pragma once
 //  #ifndef Characters_hpp
 //#define Characters_hpp
 
@@ -18,7 +18,7 @@ class Monster : public Character
 {  
 public:
     Monster(int,int,int,int);
-    void takeDamage(int damage);
+    //void takeDamage(int damage);
     void fight(Hero*);
     void death();
 };
@@ -27,7 +27,7 @@ class Hero : public Character
 {
 public:
     Hero(int, int, int, int);
-    void takeDamage(int damage);
+   // void takeDamage(int damage);
     void fight(Monster*);
     void death();
 };
